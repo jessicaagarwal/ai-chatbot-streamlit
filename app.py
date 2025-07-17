@@ -3,10 +3,12 @@ import os
 from groq import Groq
 from dotenv import load_dotenv
 
-load_dotenv()
-
 # Try Streamlit secret first (works in Cloud), fallback to env var (local)
 GROQ_API_KEY = st.secrets.get("GROQ_API_KEY") or os.getenv("GROQ_API_KEY")
+
+if not GROQ_API_KEY:
+    st.error("❌ API key is missing! Add it in Streamlit Secrets or .env")
+    st.stop()
 
 client = Groq(api_key=GROQ_API_KEY)
 

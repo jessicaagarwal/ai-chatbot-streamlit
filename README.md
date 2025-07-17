@@ -1,4 +1,4 @@
-# 🤖 AI Chatbot using Streamlit & Groq API
+# 🤖 AI Chatbot using Streamlit & Groq API (Ongoing Project)
 
 A **personalized AI-powered chatbot** built with **Streamlit** and **Groq API**, leveraging **LLaMA-3 models**. This project demonstrates **LLM integration**, **prompt customization**, and a **friendly UI with mood-based interaction**.
 

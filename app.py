@@ -3,11 +3,9 @@ import os
 from groq import Groq
 from dotenv import load_dotenv
 
-# Load environment variables
 load_dotenv()
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 
-# Initialize Groq client
 client = Groq(api_key=GROQ_API_KEY)
 
 # Streamlit UI
@@ -22,7 +20,6 @@ if "messages" not in st.session_state:
 for msg in st.session_state.messages:
     st.chat_message(msg["role"]).markdown(msg["content"])
 
-# User input
 user_input = st.chat_input("Ask me anything...")
 
 if user_input:

@@ -4,11 +4,18 @@ A simple AI-powered chatbot built with **Streamlit** and **Groq API**, leveragin
 
 ---
 
+
+## 🚀 Live Demo
+[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://ai-chatbot-app-jessicatesting.streamlit.app/)
+
+---
+
 ## 🚀 Features
-- **Interactive Chat UI** with Streamlit
-- **Powered by Groq API**
-- **Supports LLaMA models**
-- **Environment-based API key management**
+- Chat interface built with **Streamlit**
+- Powered by **Groq API** using LLaMA-3
+- Maintains chat history using `st.session_state`
+- Supports **local development** with `.env`
+- Secure deployment using **Streamlit Secrets**
 
 ---
 
@@ -16,6 +23,16 @@ A simple AI-powered chatbot built with **Streamlit** and **Groq API**, leveragin
 - **Frontend:** Streamlit
 - **Backend:** Python
 - **LLM Provider:** Groq API
+
+---
+
+## 📂 Project Structure
+```
+├── app.py
+├── README.md
+├── requirements.txt
+└── .env.example
+```
 
 ---
 
@@ -34,22 +51,47 @@ source .venv/bin/activate   # On Mac/Linux
 .venv\Scripts\activate      # On Windows
 ```
 
-### 3. Install Dependencies
-```bash
-pip install -r requirements.txt
-```
-
 ---
 
-## ⚙️ Configuration
 
-### 1. Create `.env` file
-Inside the root folder, create a `.env` file and add your **Groq API Key**:
+## 🔑 API Setup
+
+### 1. Get Groq API Key
+- Visit [Groq Console](https://console.groq.com/keys)
+- Copy your API key
+
+### 2. Local Development
+Create `.env` file in project root:
 ```
 GROQ_API_KEY=your_api_key_here
 ```
 
-> **Get API Key:** [https://console.groq.com/keys](https://console.groq.com/keys)
+Install dependencies:
+```
+pip install -r requirements.txt
+```
+
+Run the app:
+```
+streamlit run app.py
+```
+
+### 3. Streamlit Cloud Deployment
+- Add your key in **Streamlit Secrets**:
+```
+GROQ_API_KEY="your_api_key_here"
+```
+
+---
+
+
+## ✅ requirements.txt
+```
+streamlit
+python-dotenv
+groq
+httpx==0.27.0
+```
 
 ---
 
@@ -62,51 +104,6 @@ The app will be available at:
 ```
 http://localhost:8501
 ```
-
----
-
-## 📁 Project Structure
-```
-├── app.py                # Main Streamlit App
-├── requirements.txt      # Dependencies
-├── .env                  # Environment Variables
-└── README.md             # Documentation
-```
-
----
-
-## 🧩 Example `app.py`
-```python
-import os
-import streamlit as st
-from groq import Groq
-from dotenv import load_dotenv
-
-load_dotenv()
-client = Groq(api_key=os.getenv("GROQ_API_KEY"))
-
-st.title("🤖 AI Chatbot with Groq + Streamlit")
-prompt = st.text_area("Ask me anything:")
-
-if st.button("Send"):
-    with st.spinner("Generating response..."):
-        response = client.chat.completions.create(
-            model="llama-3.3-70b-versatilet",
-            messages=[
-                {"role": "system", "content": "You are a helpful AI assistant."},
-                {"role": "user", "content": prompt}
-            ]
-        )
-        st.success(response.choices[0].message.content)
-```
-
----
-
-## ✅ Requirements
-- Python 3.10+
-- Streamlit
-- Groq Python SDK
-- python-dotenv
 
 ---
 

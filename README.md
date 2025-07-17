@@ -1,21 +1,24 @@
 # 🤖 AI Chatbot using Streamlit & Groq API
 
-A simple AI-powered chatbot built with **Streamlit** and **Groq API**, leveraging **LLM models** like `llama-3.3-70b-versatile`. This project demonstrates how to integrate **Groq API** with a Python web app.
+A **personalized AI-powered chatbot** built with **Streamlit** and **Groq API**, leveraging **LLaMA-3 models**. This project demonstrates **LLM integration**, **prompt customization**, and a **friendly UI with mood-based interaction**.
 
 ---
-
 
 ## 🚀 Live Demo
 [![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://ai-chatbot-app-jessicatesting.streamlit.app/)
 
 ---
 
-## 🚀 Features
-- Chat interface built with **Streamlit**
-- Powered by **Groq API** using LLaMA-3
-- Maintains chat history using `st.session_state`
-- Supports **local development** with `.env`
-- Secure deployment using **Streamlit Secrets**
+## ✨ Features  
+✅ Chat interface built with **Streamlit**  
+✅ Powered by **Groq API** using `llama-3.3-70b-versatile`  
+✅ **Personalization** – Add your name & mood  
+✅ **Dynamic system role** for better context handling  
+✅ **Creativity control** with `temperature` slider  
+✅ **Few-shot examples toggle** for better responses  
+✅ Maintains **chat history** using `st.session_state`  
+✅ Secure deployment using **Streamlit Secrets**  
+✅ **Dark theme UI** with friendly emoji responses
 
 ---
 
@@ -110,13 +113,15 @@ http://localhost:8501
 ## 📚 Resources
 - [Groq API Docs](https://console.groq.com/docs)
 - [Streamlit Docs](https://docs.streamlit.io)
+- [Prompt Engineering Guide](https://www.promptingguide.ai/)
 
 ---
 
 ## 🔥 Future Enhancements
-- Add **chat history**
-- Deploy on **Streamlit Cloud / Render**
+- Export **chat history**
+- Deploy on **Render/ Vercel**
 - Add **speech-to-text and text-to-speech**
+- Add Multi-LLM Support (OpenAI, Claude, Gemini)
 
 ---
 
